@@ -44,7 +44,15 @@ def send_email(subject, body):
 @app.route("/webhook", methods=["POST"])
 def receive():
 
+    from flask import jsonify
+import json
+
+@app.route("/webhook", methods=["POST"])
+def receive():
     data = request.json
+
+    print("========== WEBHOOK RECEIVED ==========")
+    print(json.dumps(data, indent=2))
 
     try:
 
